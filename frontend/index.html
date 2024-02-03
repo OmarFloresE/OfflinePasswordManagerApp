@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="styles.css">
+    <title>OfflineGuardian</title>
+  </head>
+
+
+  <body>
+        <div class="header">
+            <h1>OfflineGuardian</h1>
+        </div>
+        <div class="container">
+        <div class="forms">
+            <form id="loginForm">
+                <h2>Login</h2>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" name = "password" id="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div class="separator"></div>
+            <form id="signupForm">
+                <h2>Sign Up</h2>
+                <label for="newUsername">New Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+
+</html>
