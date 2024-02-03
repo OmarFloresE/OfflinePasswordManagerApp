@@ -158,3 +158,24 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# def main():
+#     # ... (existing code)
+
+#     if __name__ == "__main__":
+#         if len(sys.argv) == 4:
+#             username_or_newUsername = sys.argv[1]
+#             password_or_newPassword = sys.argv[2]
+#             auth_type = sys.argv[3]
+
+#             if auth_type == 'login':
+#                 # Handle login logic
+#                 print(f"Received login request: {username_or_newUsername}, {password_or_newPassword}")
+#             elif auth_type == 'signup':
+#                 # Handle signup logic
+#                 print(f"Received signup request: {username_or_newUsername}, {password_or_newPassword}")
+#             else:
+#                 print("Invalid auth request type.")
+#         else:
+#             main()
