@@ -1,57 +1,38 @@
-document.getElementById('loginForm').addEventListener('submit', async (event) => {
+const handleAuth = async (authType, data) => {
+    try {
+        const response = await window.electronAPI.handleAuth(authType, data);
+        console.log("Received response:", response);
+
+        // Check for a successful message instead of 'response.success'
+        if (response && (response.message === 'Login successful' || response.message === 'User registered successfully')) {            
+            console.log(`${authType} successful:`, response);
+            // Store username in local storage
+            localStorage.setItem('username', data.username);
+            window.location.href = 'dashboard.html';
+        } else {
+            // Handle failed login/signup
+            console.error(`${authType} failed:`, response ? response.message : 'No response');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+};
+
+
+document.getElementById('loginForm').addEventListener('submit', (event) => {
     event.preventDefault();
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-
-    console.log('Renderer Process - Username:', username);
-    console.log('Renderer Process - Password:', password); // Mask the password in the renderer process
-
-    // Ensure that the password is not an empty string before sending
-    if (!password.trim()) {
-        console.error('Renderer Process - Password is empty!');
-        return;
-    }
-
-    // Send login data to the main process using ipcRenderer.invoke
-    try {
-        console.log('Submitting login form data:');
-        const response = await electron.ipcRenderer.invoke('auth', { type: 'login', username, password });
-        console.log('Login response:', response);
-    } catch (error) {
-        console.error('Error during login:', error);
-    }
+    handleAuth('login', { username, password });
 });
 
-
-
-
-document.getElementById('signupForm').addEventListener('submit', async (event) => {
+document.getElementById('signupForm').addEventListener('submit', (event) => {
     event.preventDefault();
-    const newUsername = document.getElementById('newUsername').value;
-    const newPassword = document.getElementById('newPassword').value;
-
-    // Send signup data to main process using ipcRenderer.invoke
-    try {
-        console.log('Submitting signup form data:');
-        const response = await electron.ipcRenderer.invoke('auth', { type: 'signup', newUsername, newPassword });
-        console.log('Signup response:', response);
-    } catch (error) {
-        console.error('Error during signup:', error);
-    }
+    const username = document.getElementById('newUsername').value;
+    const password = document.getElementById('newPassword').value;
+    handleAuth('signup', { username, password });
 });
 
+// Add similar event listeners and functions for storing, viewing, and deleting passwords
 
-// document.getElementById('signupForm').addEventListener('submit', async (event) => {
-//     event.preventDefault();
-//     const newUsername = document.getElementById('newUsername').value;
-//     const newPassword = document.getElementById('newPassword').value;
-
-//     // Send signup data to main process using ipcRenderer.invoke
-//     try {
-//         console.log('Submitting signup form data:');
-//         const response = await electron.ipcRenderer.invoke('auth', { type: 'signup', newUsername, newPassword });
-//         console.log('Signup response:', response);
-//     } catch (error) {
-//         console.error('Error during signup:', error);
-//     }
-// });
+// ... additional code as needed
