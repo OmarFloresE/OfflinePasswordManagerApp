@@ -85,9 +85,9 @@ def login_user(username, password, cursor):
         if bcrypt.checkpw(password.encode('utf-8'), hashed_password):
             return {"message": "Login successful", "user_id": user_id}
         else:
-            return {"error": "Invalid password"}
+            return {"error"}
     else:
-        return {"error": "User not found"}
+        return {"error"}
     
 def delete_account(user_id, cursor):
     cursor.execute('DELETE FROM passwords WHERE user_id = ?', (user_id,))

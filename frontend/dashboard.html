@@ -4,16 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval';">
-
     <link rel="stylesheet" href="dashboard.css">
-    <title>Password Manager Dashboard</title>
+    <title>OfflineGuardian</title>
 </head>
 <body>
-    
     <div class="dashboard-container">
+        <div class="column left-column">
+            <div class="action-buttons">
+                <button id="createEntry" class="button">Create Entry</button>
+                <select id="sortOptions" class="button">
+                    <option value="" disabled selected>Sort Entries</option>
+                    <option value="alphabetical">Alphabetical</option>                
+                    <option value="dateCreated">Date Created</option>
+                    <option value="dateModified">Date Modified</option>
+                    <option value="category">Category</option>
+                </select>
+            </div>
+            <div class="item-list" id="itemList">
+                <!-- Entries will be populated here -->
+            </div>
+        </div>
 
-        <!-- New Entry Form (could be hidden by default and shown when 'Create Entry' is clicked) -->
-    <div id="newEntryForm" class="modal hidden">
+        <div class="column right-column">
+            <div class="action-buttons">
+                <button id="signOut" class="button">Sign Out</button>
+                <button id="deleteAccount" class="button">Delete Account</button>
+            </div>
+            <div class="item-detail" id="itemDetail">
+                <!-- Welcome message or entry details will be displayed here -->
+                <div id="welcomeMessage" class="welcome"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Entry Form (Modal) -->
+<!-- New Entry Form (Modal) -->
+<div id="newEntryForm" class="modal hidden">
+    <div class="modal-content">
         <label for="newWebsite">Website:</label>
         <input type="text" id="newWebsite" name="website" required>
         <br>
@@ -27,7 +54,7 @@
         <input type="text" id="newUrl" name="url">
         <br>
         <label for="newDescription">Description:</label>
-        <textarea id="newDescription" name="description"></textarea>
+        <textarea id="newDescription" name="description" rows="3" cols="10"></textarea>
         <br>
         <label for="newCategory">Category:</label>
         <select id="newCategory" name="category" required>
@@ -40,43 +67,13 @@
             <option value="Education">Education</option>
             <option value="Misc">Misc</option>
         </select>
-        
         <br>
         <br>
-        <button id="saveNewEntry">Save</button>
-        <button id="cancelNewEntry">Cancel</button>
+        <button id="saveNewEntry" class="button">Save</button>
+        <button id="cancelNewEntry" class="button">Cancel</button>
     </div>
-
-        <div class="action-buttons">
-            <button id="createEntry">Create Entry</button>
-
-            <select id="sortOptions">
-                <option value="" disabled selected>Sort Entries</option>
-                <option value="alphabetical">Alphabetical</option>                
-                <option value="dateCreated">Date Created</option>
-                <option value="dateModified">Date Modified</option>
-                <option value="category">Category</option>
-            </select>
-        </div>
-
-        <!-- Item List Section -->
-        <div class="item-list" id="itemList">
-            <!-- Entries will be populated here -->
-        </div>
-            <!-- Repeat for other items -->
-        <div class="action-buttons">
-            <button id="signOut">Sign Out</button>
-        </div>
-    <!-- Item Detail Section -->
-    <div class="item-detail" id="itemDetail">
-    <!-- Welcome message or entry details will be displayed here -->
-        <div id="welcomeMessage"><h1>Welcome! <br> Please select an entry to view details.</h1></div>
-    </div>
-    <div class="action-buttons">
-        <button id="deleteAccount">Delete Account</button>
-    </div>
+</div>
 
     <script src="dashboard.js"></script>
-
 </body>
 </html>
