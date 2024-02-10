@@ -31,19 +31,11 @@ Inter-Process Communication (IPC) is used to securely pass messages between the 
 - **Data Retrieval:** Frontend requests the backend for fetching the stored passwords.
 
 ## Setup and Installation
-*Instructions on how to set up and install your application.*
 
 ## Usage
-*Instructions on how to use the application, including any necessary setup steps.*
 
 ## Contributing
-*Information on how others can contribute to the project.*
 
 ## License
-*State the license under which this project is available. Common choices include MIT, GPL, or Apache.*
 
----
 
-This project is developed and maintained by [Your Name or Organization].
-
-For more information or support, please contact [Your Contact Information].
