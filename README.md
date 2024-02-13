@@ -30,12 +30,12 @@ Inter-Process Communication (IPC) is used to securely pass messages between the 
 - **Password Management:** Requests for storing, modifying, and deleting passwords are sent from the frontend to the backend.
 - **Data Retrieval:** Frontend requests the backend for fetching the stored passwords.
 
-## Setup and Installation
+## Installation
 
-## Usage
+You can download the latest version of the application from [this Google Drive link](https://drive.google.com/drive/folders/1QvmggMiCMyY8WD0O39pJZNIpUBXJILe5?usp=drive_link).
 
-## Contributing
+Simply click the link and download the installer for your operating system.
 
 ## License
-
+[MIT License](https://choosealicense.com/licenses/mit/)
 
