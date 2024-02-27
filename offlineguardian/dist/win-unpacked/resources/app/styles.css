@@ -1,0 +1,161 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0a0a; /* Dark background */
+    color: #a8e6cf; /* Soft neon green text */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 500px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #ff5f5f; /* Neon red */
+    font-size: 36px;
+}
+
+.auth-container {
+    background-color: #1c1c1c; /* Very dark gray */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Darker shadow */
+    margin-bottom: 20px;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+.form-container:last-child {
+    margin-bottom: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #ff5f5f; /* Neon red */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4deeea; /* Neon cyan */
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color: #262626; /* Dark gray for input fields */
+    border: 1px solid #4deeea; /* Neon cyan border */
+    border-radius: 5px;
+    color: #a8e6cf; /* Soft neon green text */
+}
+
+button {
+    background-color: #4deeea; /* Neon cyan */
+    color: #262626; /* Dark text for contrast */
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #3ec1d3; /* Darker neon cyan */
+}
+
+#passwordInfoLink {
+    color: #ff5f5f; /* Neon red */
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Darker semi-transparent black */
+}
+
+.modal-content {
+    background-color: #262626; /* Dark gray */
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.strength-indicator {
+    height: 5px;
+    background-color: #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.weak {
+    background-color: #ff3f3f; /* Red */
+}
+
+.medium {
+    background-color: #ffb83f; /* Orange */
+}
+
+.strong {
+    background-color: #0fdf64; /* Bright green */
+}
+
+.strength-text {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #0fdf64; /* Bright green */
+}
+
+/* Error Message Styling */
+#authError {
+    color: #ff5f5f; /* Bright Neon Red for error text */
+    background-color: #1c1c1c; /* Dark background for contrast */
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: none; /* Hide by default */
+    font-size: 0.9em;
+}

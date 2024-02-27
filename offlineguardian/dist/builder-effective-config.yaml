@@ -1,0 +1,19 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.omarflores.passwordmanager
+productName: OfflineGuardian
+asar: false
+files:
+  - filter:
+      - '**/*'
+      - backend/**/*
+      - '!backend/__pycache__/**/*'
+      - '!backend/build/**/*'
+win:
+  icon: assets/passkey.ico
+  target: nsis
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+electronVersion: 28.1.4
